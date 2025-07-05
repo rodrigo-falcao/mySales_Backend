@@ -13,7 +13,6 @@ export default class DeleteProductsService {
       throw new AppError('Product not found', 404);
     }
 
-    // Delete the product
     await ProductsRepositories.remove(product);
   }
 }

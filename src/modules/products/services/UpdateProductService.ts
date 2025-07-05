@@ -9,7 +9,7 @@ interface IUpdateProduct {
   quantity: number;
 }
 
-export default class CreateProductsService {
+export default class UpdateProductsService {
   async execute({
     id,
     name,
