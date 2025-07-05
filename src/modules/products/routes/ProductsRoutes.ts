@@ -1,13 +1,14 @@
 import { Router } from "express";
 import ProductsControllers from "../controllers/ProductsControllers";
+import { createProductSchema, idParamsValidation, updateProductSchema } from "../schemas/ProductsSchemas";
 
 const productsRoutes = Router();
 const productsControllers = new ProductsControllers();
 
 productsRoutes.get("/", productsControllers.index);
-productsRoutes.get("/:id", productsControllers.show);
-productsRoutes.post("/", productsControllers.create);
-productsRoutes.put("/:id", productsControllers.update);
-productsRoutes.delete("/:id", productsControllers.delete);
+productsRoutes.get("/:id", idParamsValidation, productsControllers.show);
+productsRoutes.post("/", createProductSchema, productsControllers.create);
+productsRoutes.put("/:id", updateProductSchema, productsControllers.update);
+productsRoutes.delete("/:id", idParamsValidation, productsControllers.delete);
 
 export default productsRoutes;
