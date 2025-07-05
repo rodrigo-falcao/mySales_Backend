@@ -50,7 +50,7 @@ export default class ProductsControllers {
     const { id } = request.params;
     const deleteProductsService = new DeleteProductsService();
     await deleteProductsService.execute({ id });
-    return response.status(204).send([]);
+    return response.json({ message: "Product deleted successfully!" });
   }
 }
 

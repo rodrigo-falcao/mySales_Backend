@@ -8,6 +8,7 @@ export default class ErrorHandleMiddleware {
     res: Response,
     _next: NextFunction,
   ): Response {
+    console.error(error);
     if (error instanceof AppError) {
       return res.status(error.statusCode).json({
         type: 'error',

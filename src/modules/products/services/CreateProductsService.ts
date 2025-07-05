@@ -23,6 +23,7 @@ export default class CreateProductsService {
     });
 
     await ProductsRepositories.save(product);
-    return product;
+    const productCreated = await ProductsRepositories.findOneBy({ id: product.id });
+    return productCreated!;
   }
 }

@@ -14,9 +14,9 @@ export class Product {
   @Column({ type: 'int' })
   quantity: number;
 
-  @Column({ type: 'timestamp' })
+  @Column({name: 'created_at', type: 'timestamp' })
   createdAt: Date;
 
-  @Column({ type: 'timestamp' })
+  @Column({name: 'updated_at', type: 'timestamp' })
   updatedAt: Date;
 }
