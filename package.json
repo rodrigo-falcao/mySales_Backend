@@ -30,12 +30,14 @@
   "dependencies": {
     "@types/bcrypt": "^5.0.2",
     "@types/joi": "^17.2.2",
+    "@types/jsonwebtoken": "^9.0.10",
     "bcrypt": "^6.0.0",
     "celebrate": "^15.0.3",
     "cors": "^2.8.5",
     "dotenv": "^17.0.1",
     "express": "^4.21.2",
     "express-async-errors": "^3.1.1",
+    "jsonwebtoken": "^9.0.2",
     "pg": "^8.16.3",
     "reflect-metadata": "^0.2.2",
     "typeorm": "^0.3.25"
