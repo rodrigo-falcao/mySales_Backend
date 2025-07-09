@@ -1,4 +1,4 @@
-import { usersRepository } from '../database/repositories/users.Repositories';
+import { usersRepository } from '../database/repositories/UsersRepositories';
 import { User } from '../database/entities/User';
 
 export default class ListUsersService {

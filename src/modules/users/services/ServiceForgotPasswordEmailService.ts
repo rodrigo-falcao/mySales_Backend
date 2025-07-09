@@ -1,5 +1,5 @@
 import AppError from '@shared/errors/AppError';
-import { usersRepository } from '../database/repositories/users.Repositories';
+import { usersRepository } from '../database/repositories/UsersRepositories';
 import { usersTokensRepositories } from '../database/repositories/UsersTokensRepositories';
 
 interface IForgotPassword {
