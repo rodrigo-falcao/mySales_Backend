@@ -2,6 +2,7 @@ import { Router } from 'express';
 import productsRoutes from '@modules/products/routes/ProductsRoutes';
 import usersRoutes from '@modules/users/routes/UserRoutes';
 import sessionRoutes from '@modules/users/routes/SessionRoutes';
+import passwordRoutes from '@modules/users/routes/PasswordRoutes';
 
 const routes = Router();
 
@@ -12,5 +13,7 @@ routes.get('/health', (req, res) => {
 routes.use('/products', productsRoutes)
 routes.use('/users', usersRoutes)
 routes.use('/sessions', sessionRoutes);
+routes.use('/password', passwordRoutes);
+
 
 export default routes;

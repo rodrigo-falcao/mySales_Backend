@@ -14,8 +14,6 @@ export default class ServiceForgotPasswordEmailService {
     }
 
     const token = await usersTokensRepositories.generate(user.id);
-    console.log(`Token for password reset: ${token}`);
+    console.log(token);
   }
-
-
 }
