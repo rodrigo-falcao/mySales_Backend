@@ -7,7 +7,13 @@ export const orderProductsRepository = AppDataSource.getRepository(OrderProducts
 
 interface ICreateOrder {
   customer: Customers;
-  products: OrderProducts[];
+  products: ICreateOrderProduct[];
+}
+
+interface ICreateOrderProduct {
+  product_id: string;
+  quantity: number;
+  price: number;
 }
 
 export const orderRepository = AppDataSource.getRepository(Order).extend({
