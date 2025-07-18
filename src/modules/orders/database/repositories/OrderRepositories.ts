@@ -17,7 +17,7 @@ interface ICreateOrderProduct {
 }
 
 export const orderRepository = AppDataSource.getRepository(Order).extend({
-  async findbyId(id: number): Promise<Order | null> {
+  async findById(id: number): Promise<Order | null> {
     const order = await this.findOne({
       where: { id },
       relations: ["customer", "orders_products"],
