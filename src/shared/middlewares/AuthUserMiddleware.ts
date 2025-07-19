@@ -21,7 +21,6 @@ export default class AuthMiddleware {
     try {
       const decodedToken = verify(token, process.env.JWT_SECRET as Secret);
       const { sub } = decodedToken as ITokenPayload;
-
       request.user = {
         id: sub,
       };
