@@ -14,11 +14,11 @@ export default class UsersControllers {
   async create(request: Request, response: Response): Promise<Response> {
     const { name, email, password } = request.body;
     const createUserService = new CreateUserService();
-    const user = await createUserService.execute({
+    const users = await createUserService.execute({
       name,
       email,
       password,
     });
-    return response.json(user);
+    return response.json(instanceToInstance(users));
   }
 }
