@@ -16,9 +16,9 @@ export class Order {
   })
   orders_products: OrderProducts[];
 
-  @CreateDateColumn()
+  @CreateDateColumn({ name: "created_at" })
   createdAt: Date;
 
-  @UpdateDateColumn()
+  @UpdateDateColumn({ name: "updated_at" })
   updatedAt: Date;
 }
