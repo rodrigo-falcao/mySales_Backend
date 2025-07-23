@@ -1,8 +1,8 @@
 import AppError from "@shared/errors/AppError";
-import { usersRepository } from "../database/repositories/UsersRepositories";
+import { usersRepository } from "../infra/database/repositories/UsersRepositories";
 import { compare } from "bcrypt";
 import { hash } from "bcrypt";
-import { User }  from "../database/entities/User";
+import { User }  from "../infra/database/entities/User";
 
 interface IUpdateProfile {
   user_id: number;

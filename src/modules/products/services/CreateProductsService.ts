@@ -1,6 +1,6 @@
 import AppError from "@shared/errors/AppError";
-import { Product } from "../database/entities/Product";
-import { ProductsRepositories } from "../database/repositories/ProductsRepositories";
+import { Product } from "../infra/database/entities/Product";
+import { ProductsRepositories } from "../infra/database/repositories/ProductsRepositories";
 
 interface ICreateProduct {
   name: string;

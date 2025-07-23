@@ -1,9 +1,9 @@
 import { Request, Response } from "express";
-import CreateProductsService from "../services/CreateProductsService";
-import DeleteProductsService from "../services/DeleteProductsService";
-import ListProductsService from "../services/ListProductsService";
-import ShowProductsService from "../services/ShowProductService";
-import UpdateProductsService from "../services/UpdateProductService";
+import CreateProductsService from "../../../services/CreateProductsService";
+import DeleteProductsService from "../../../services/DeleteProductsService";
+import ListProductsService from "../../../services/ListProductsService";
+import ShowProductsService from "../../../services/ShowProductService";
+import UpdateProductsService from "../../../services/UpdateProductService";
 
 
 

@@ -1,5 +1,5 @@
-import { Customers } from "../database/entities/Customers";
-import { customerRepositories } from "../database/repositories/CustomerRepositories";
+import { Customers } from "../infra/database/entities/Customers";
+import { customerRepositories } from "../infra/database/repositories/CustomerRepositories";
 import { IPagination } from "@shared/interfaces/pagination.interface";
 
 

@@ -1,5 +1,5 @@
 import { Router } from "express";
-import ProductsControllers from "../controllers/ProductsControllers";
+import ProductsControllers from "../infra/http/controllers/ProductsControllers";
 import { createProductSchema, idParamsValidation, updateProductSchema } from "../schemas/ProductsSchemas";
 
 const productsRoutes = Router();

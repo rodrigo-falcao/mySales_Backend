@@ -1,4 +1,4 @@
-import { Product } from '@modules/products/database/entities/Product';
+import { Product } from '@modules/products/infra/database/entities/Product';
 import { Order } from '@modules/orders/database/entities/Order';
 import { Entity, Column, JoinColumn, PrimaryGeneratedColumn, ManyToOne, CreateDateColumn, UpdateDateColumn } from 'typeorm';
 

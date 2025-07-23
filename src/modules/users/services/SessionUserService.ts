@@ -1,8 +1,8 @@
 import "dotenv/config";
 import { compare } from "bcrypt";
 import { Secret, sign } from "jsonwebtoken";
-import { User } from "../database/entities/User";
-import { usersRepository } from "../database/repositories/UsersRepositories";
+import { User } from "../infra/database/entities/User";
+import { usersRepository } from "../infra/database/repositories/UsersRepositories";
 import AppError from "@shared/errors/AppError";
 
 interface ISessionUser {

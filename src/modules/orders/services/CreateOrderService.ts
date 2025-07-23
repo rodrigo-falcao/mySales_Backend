@@ -1,9 +1,9 @@
-import { Order } from '../database/entities/Order';
-import { Product } from '@modules/products/database/entities/Product';
-import { customerRepositories } from '@modules/customers/database/repositories/CustomerRepositories';
-import { ProductsRepositories } from '@modules/products/database/repositories/ProductsRepositories';
+import { customerRepositories } from '@modules/customers/infra/database/repositories/CustomerRepositories';
+import { Order } from '../infra/database/entities/Order';
+import { orderRepository } from '../infra/database/repositories/OrderRepositories';
+import { Product } from '@modules/products/infra/database/entities/Product';
+import { ProductsRepositories } from '@modules/products/infra/database/repositories/ProductsRepositories';
 import AppError from '@shared/errors/AppError';
-import { orderRepository } from '../database/repositories/OrderRepositories';
 
 interface ICreateOrder {
   customer_id: string;
@@ -22,16 +22,16 @@ export default class CreateOrderService {
       throw new AppError('Could not find any products with the given ids.');
     }
 
-    const productsIds = existsProducts.map(product => String(product.id));
+    const productsIds = existsProducts.map((product: Product) => String(product.id));
     const checkInexistentProducts = products.filter(
-      product => !productsIds.includes(String(product.id)),
+      (product: Product) => !productsIds.includes(String(product.id)),
     );
     if (checkInexistentProducts.length) {
       throw new AppError(`Could not find product ${checkInexistentProducts[0].id}.`, 404);
     }
 
     const quantityAvailable = products.filter((product) => {
-      const foundProduct = existsProducts.find(productExists => String(productExists.id) === String(product.id));
+      const foundProduct = existsProducts.find((productExists: Product) => String(productExists.id) === String(product.id));
       return !foundProduct || foundProduct.quantity < product.quantity;
     });
     if (quantityAvailable.length) {
@@ -39,7 +39,7 @@ export default class CreateOrderService {
     }
 
     const serializedProducts = products.map(product => {
-      const foundProduct = existsProducts.find(p => String(p.id) === String(product.id));
+      const foundProduct = existsProducts.find((p: Product) => String(p.id) === String(product.id));
       if (!foundProduct) {
         throw new AppError(`Product ${product.id} not found when serializing.`, 404);
       }
@@ -57,8 +57,8 @@ export default class CreateOrderService {
 
     const { orders_products } = order;
 
-    const updateProductQuantity = orders_products.map(product => {
-      const foundProduct = existsProducts.find(p => String(p.id) === String(product.product_id));
+    const updateProductQuantity = orders_products.map((product: any) => {
+      const foundProduct = existsProducts.find((p: Product) => String(p.id) === String(product.product_id));
       if (!foundProduct) {
         throw new AppError(`Product ${product.product_id} not found when updating quantity.`, 404);
       }
@@ -68,7 +68,7 @@ export default class CreateOrderService {
       };
     });
 
-    await Promise.all(updateProductQuantity.map(async (product) => {
+    await Promise.all(updateProductQuantity.map(async (product: any) => {
       await ProductsRepositories.update(product.id, { quantity: product.quantity });
     }));
     return order;
