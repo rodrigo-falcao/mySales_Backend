@@ -12,7 +12,6 @@
 ![ts-node-dev](https://img.shields.io/badge/ts--node--dev-2.0.0-3178C6)
 ![reflect-metadata](https://img.shields.io/badge/reflect--metadata-0.2.2-blueviolet)
 
-## Sobre o projeto
 
 O **My Sales Project** é uma aplicação para controle de vendas e gerenciamento de estoque, desenvolvida em Node.js com TypeScript, Express e PostgreSQL.
 O objetivo é oferecer uma base sólida para estudos e prática de conceitos modernos de backend, incluindo uso de ORM, migrations, boas práticas de código e organização de projetos.
@@ -22,6 +21,7 @@ O objetivo é oferecer uma base sólida para estudos e prática de conceitos mod
 - Node.js >= 20.x
 - PostgreSQL >= 8.x
 - Yarn ou npm
+- Executar as migrations do TypeORM para criar as tabelas
 
 ## 📚 Estrutura do Projeto
 
