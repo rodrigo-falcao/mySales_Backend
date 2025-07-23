@@ -1,13 +1,7 @@
 import AppError from '@shared/errors/AppError';
 import { Product } from '../infra/database/entities/Product';
 import { ProductsRepositories } from '../infra/database/repositories/ProductsRepositories';
-
-interface IUpdateProduct {
-  id: string;
-  name: string;
-  price: number;
-  quantity: number;
-}
+import { IUpdateProduct } from '../domain/models/IUpdateProduct';
 
 export default class UpdateProductsService {
   async execute({

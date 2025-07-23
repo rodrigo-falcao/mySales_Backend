@@ -1,10 +1,6 @@
+import { IDeleteProduct } from '../domain/models/IDeleteProduct';
 import { ProductsRepositories } from '../infra/database/repositories/ProductsRepositories';
 import AppError from '@shared/errors/AppError';
-import { Product } from '../infra/database/entities/Product';
-
-interface IDeleteProduct {
-  id: string;
-}
 
 export default class DeleteProductsService {
   async execute({ id }: IDeleteProduct): Promise<void> {

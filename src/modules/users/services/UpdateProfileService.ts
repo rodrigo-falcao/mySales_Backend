@@ -3,14 +3,7 @@ import { usersRepository } from "../infra/database/repositories/UsersRepositorie
 import { compare } from "bcrypt";
 import { hash } from "bcrypt";
 import { User }  from "../infra/database/entities/User";
-
-interface IUpdateProfile {
-  user_id: number;
-  name: string;
-  email: string;
-  password?: string;
-  oldPassword?: string;
-}
+import { IUpdateProfile } from "../domain/models/IUpdateProfile";
 
 export default class UpdateProfileService {
   public async execute({

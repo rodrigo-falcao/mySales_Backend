@@ -3,12 +3,7 @@ import { hash } from 'bcrypt';
 import { usersRepository } from '../infra/database/repositories/UsersRepositories';
 import {usersTokensRepositories} from '../infra/database/repositories/UsersTokensRepositories';
 import AppError from '@shared/errors/AppError';
-
-interface IResetPassword {
-  token: string;
-  password: string;
-}
-
+import { IResetPassword } from '../domain/models/IResetPassword';
 
 export default class ResetPasswordService {
   async execute({token, password}: IResetPassword): Promise<void> {

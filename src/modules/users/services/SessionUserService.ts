@@ -1,19 +1,10 @@
 import "dotenv/config";
 import { compare } from "bcrypt";
 import { Secret, sign } from "jsonwebtoken";
-import { User } from "../infra/database/entities/User";
 import { usersRepository } from "../infra/database/repositories/UsersRepositories";
 import AppError from "@shared/errors/AppError";
-
-interface ISessionUser {
-  email: string;
-  password: string;
-}
-
-interface ISessionResponse {
-  user: User;
-  token: string;
-}
+import { ISessionUser } from "../domain/models/ISessionUser";
+import { ISessionResponse } from "../domain/models/ISessionResponse";
 
 export default class SessionUserService {
   async execute({email, password}: ISessionUser): Promise<ISessionResponse> {
