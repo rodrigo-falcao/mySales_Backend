@@ -1,20 +1,6 @@
-<!-- Ótimo, você está usando express@4.21.2 e @types/express@5.0.3.
-Esse é o motivo do erro!
-A versão 5 dos tipos (@types/express@5.x) é incompatível com o Express 4.
-
-Como corrigir
-Remova a versão errada dos tipos:
-Instale a versão correta dos tipos para Express 4:
-Pare e rode novamente seu projeto.
-Resumo:
-
-Sempre use @types/express@4.x com express@4.x.
-Isso vai eliminar o erro de sobrecarga no app.use(handleError).
-Se fizer isso, seu projeto funcionará normalmente! -->
-
 # 🚀 My Sales Project
 
-![Status](https://img.shields.io/badge/Status-Em_andamento-yellow)
+![Status](https://img.shields.io/badge/Status-Finalizado-green)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.8.3-3178C6?logo=typescript)
 ![Node.js](https://img.shields.io/badge/Node.js-20.x-339933?logo=node.js)
 ![Express](https://img.shields.io/badge/Express-4.21.2-000000?logo=express)
@@ -26,29 +12,46 @@ Se fizer isso, seu projeto funcionará normalmente! -->
 ![ts-node-dev](https://img.shields.io/badge/ts--node--dev-2.0.0-3178C6)
 ![reflect-metadata](https://img.shields.io/badge/reflect--metadata-0.2.2-blueviolet)
 
----
-
 ## Sobre o projeto
 
 O **My Sales Project** é uma aplicação para controle de vendas e gerenciamento de estoque, desenvolvida em Node.js com TypeScript, Express e PostgreSQL.
 O objetivo é oferecer uma base sólida para estudos e prática de conceitos modernos de backend, incluindo uso de ORM, migrations, boas práticas de código e organização de projetos.
 
----
+## ⚙️ Requisitos
 
-## Principais tecnologias
+- Node.js >= 20.x
+- PostgreSQL >= 8.x
+- Yarn ou npm
 
-- **Node.js**
-- **TypeScript**
-- **Express**
-- **TypeORM**
-- **PostgreSQL**
-- **ESLint**
-- **dotenv**
-- **CORS**
-- **ts-node-dev**
-- **reflect-metadata**
+## 📚 Estrutura do Projeto
+
+```
+src/
+├── modules/
+│   ├── customers/
+│   ├── products/
+│   ├── orders/
+│   └── users/
+├── shared/
+│   ├── errors/
+│   ├── infra/
+│   ├── interfaces/
+│   └── middlewares/
+├── configs
+├── ...
+```
+
+- **modules/**: Domínios da aplicação (clientes, produtos, pedidos).
+- **shared/**: Infraestrutura, middlewares, infra e erros globais.
+- **config/**: Configurações gerais.
+
+## 🧑‍💻 Boas práticas
+
+- Princípios SOLID aplicados.
+- Separação de interfaces em `models`.
+- Repositórios e serviços desacoplados.
+- Validação de dados e tratamento de erros centralizado.
+- Uso de migrations para versionamento do banco.
 
 
-## Status
-
-Projeto em andamento 🚧
+🔹 Projeto criado para aprendizado e prática! 🚀 Sinta-se à vontade para contribuir ou sugerir melhorias. 😊
