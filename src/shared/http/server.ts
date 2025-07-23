@@ -6,6 +6,7 @@ import cors from 'cors';
 import ErrorHandleMiddleware from '@shared/middlewares/ErrorHandleMiddleware';
 import express from 'express';
 import routes from './routes';
+import rateLimiter from '@shared/middlewares/rateLimiter';
 
 AppDataSource.initialize()
   .then(async () => {
@@ -13,6 +14,7 @@ AppDataSource.initialize()
 
     app.use(cors());
     app.use(express.json());
+    app.use(rateLimiter);
 
     app.use(routes);
     app.use(errors());
